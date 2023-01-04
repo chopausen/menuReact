@@ -1,31 +1,44 @@
 import "./App.css";
 import React from "react";
 import CardComponent from "./components/cardComponent/CardComponent";
+import { menu } from "./data.js"
 
 class App extends React.Component {
   constructor(props) {
     super();
     this.state = {
-      id: 1,
-      title: " milkshake",
-      category: "breakfast",
-      price: 15.99,
-      img: "https://media.istockphoto.com/id/1323536801/photo/italian-frappe-isolated-on-white-background-gianduia-gelato-with-chocolate-topping-and-red.jpg?b=1&s=170667a&w=0&k=20&c=Fnw8T22h-gGE89mTvqygvCTs3NRJ6Nro5u2wgbMjxjk=",
-      desc: `I'm baby woke mlkshk wolf bitters live-edge blue bottle, hammock freegan copper mug whatever cold-pressed `,
+      menu
+      // id: "bbq-rib-tips-serves-10-15",
+      // img: "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/90450/bbq-rib-tips-serves-10-15.c3f35f44d3b1650273c3cdd42494fb66.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
+      // name: "Bludso's BBQ",
+      // dsc: "BBQ Rib Tips - Serves 10-15",
+      // price: 109,
+      // rate: 5,
+      // country: "Los Angeles, CA",
+      // category: "barbeque"
+      
+      
     };
   }
   render() {
+
     return (
       <div>
+      
+        {this.state.menu.map((item) => (
+          <div key={item.id}>    
         <CardComponent
-          title={this.state.title}
-          category={this.state.category}
-          price={this.state.price}
-          img={this.state.img}
-          desc={this.state.desc}
+          name={this.state.item.name}
+          category={this.state.item.category}
+          price={this.state.item.price}
+          img={this.state.item.img}
+          dsc={this.state.item.dsc}
+          rate={this.state.item.rate}
         />
+        </div>
+        ))}
       </div>
-    );
+    )
   }
 }
 
