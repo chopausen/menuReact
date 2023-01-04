@@ -261,7 +261,7 @@ export const menu = [
     category: "desserts",
   },
   {
-    id: "choose-your-own-ice-cream-donuts-6-pack",
+    id: "choose-your-own-ice-cream-donuts-6-pack1",
     img: "https://goldbelly.imgix.net/uploads/showcase_media_asset/image/132716/choose-your-own-ice-cream-donuts-6-pack.24d0b44765a7c54237fcd7ea9d9d8093.jpg?ixlib=react-9.0.2&auto=format&ar=1%3A1",
     name: "Elegant Desserts",
     dsc: "Choose Your Own Ice Cream Donuts - 6 Pack",

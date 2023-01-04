@@ -8,30 +8,30 @@ import Typography from "@mui/material/Typography";
 import TextRating from "./TextRating";
 // import { menu } from "./cardComponent/components/data"
 
-
 class CardComponent extends React.Component {
   constructor(props) {
-    super();
+    super(props);
     // this.state = {
-    //   menu 
-    // }
+    //   menu
+    // };
   }
   addToCartHandler = () => {
     console.log("Add to cart clicked!");
   };
 
   render() {
-
     // const { item } = this.props
     const name = this.props.name;
     const img = this.props.img;
     const price = this.props.price;
     const dsc = this.props.dsc;
     const category = this.props.category;
+    const country = this.props.country;
+    const rate = this.props.rate;
 
     return (
       <div>
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345 }} className="card-styling">
           <CardMedia sx={{ height: 200 }} image={img} name={name} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
@@ -42,7 +42,8 @@ class CardComponent extends React.Component {
             </Typography>
             <Typography>${price}</Typography>
             <Typography>Category: {category}</Typography>
-           <TextRating />
+            <Typography>Origin: {country}</Typography>
+            <TextRating />
           </CardContent>
           <CardActions>
             <Button size="small" onClick={this.addToCartHandler}>
