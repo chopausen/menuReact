@@ -10,7 +10,7 @@ import TextRating from "./TextRating";
 
 class CardComponent extends React.Component {
   constructor(props) {
-    super(props);
+    super();
     // this.state = {
     //   menu
     // };
@@ -20,7 +20,7 @@ class CardComponent extends React.Component {
   };
 
   render() {
-    // const { item } = this.props
+ 
     const name = this.props.name;
     const img = this.props.img;
     const price = this.props.price;
@@ -43,7 +43,7 @@ class CardComponent extends React.Component {
             <Typography>${price}</Typography>
             <Typography>Category: {category}</Typography>
             <Typography>Origin: {country}</Typography>
-            <TextRating />
+            <TextRating rate={rate} />
           </CardContent>
           <CardActions>
             <Button size="small" onClick={this.addToCartHandler}>

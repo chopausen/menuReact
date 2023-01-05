@@ -2,15 +2,16 @@ import * as React from 'react';
 import Rating from '@mui/material/Rating';
 
 
-function TextRating(props) {
-  return (
-
-     <div className="Rating">
-<Rating defaultValue={4} max={5} precision={0.1}/>
-     </div>
-  )
- 
-
+class TextRating extends React.Component {
+  constructor(props) {
+    super();
+  }
+  render() {
+    return (
+      <div className="Rating">
+        <Rating name="read-only" value={this.props.rate} readOnly />
+      </div>
+    );
+  }
 }
-
 export default TextRating;
