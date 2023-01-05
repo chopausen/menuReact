@@ -6,14 +6,13 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TextRating from "./TextRating";
-// import { menu } from "./cardComponent/components/data"
+
+
 
 class CardComponent extends React.Component {
   constructor(props) {
     super();
-    // this.state = {
-    //   menu
-    // };
+   
   }
   addToCartHandler = () => {
     console.log("Add to cart clicked!");
@@ -31,8 +30,8 @@ class CardComponent extends React.Component {
 
     return (
       <div>
-        <Card sx={{ maxWidth: 345 }} className="card-styling">
-          <CardMedia sx={{ height: 200 }} image={img} name={name} />
+        <Card sx={{ maxWidth: 300, margin: 2, maxHeight:430 }}>
+          <CardMedia sx={{ height: 200, width: 300 }} image={img} name={name} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {name}
@@ -46,7 +45,7 @@ class CardComponent extends React.Component {
             <TextRating rate={rate} />
           </CardContent>
           <CardActions>
-            <Button size="small" onClick={this.addToCartHandler}>
+            <Button size="small" sx={{zIndex: 3}} onClick={this.addToCartHandler}>
               Add to Cart
             </Button>
           </CardActions>
