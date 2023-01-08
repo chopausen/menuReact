@@ -46,7 +46,7 @@ const ImageSlider = ({ slides }) => {
         return (
           <div>
             {index === current && (
-              <img
+              <img 
                 src={slide.image}
                 alt="restaurant-photos"
                 className="image"
