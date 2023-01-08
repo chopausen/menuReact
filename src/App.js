@@ -12,6 +12,7 @@ class App extends React.Component {
     this.state = {
       menu,
       showComponent:false,
+      handleOpen: false,
     };
   }
 
@@ -32,7 +33,7 @@ class App extends React.Component {
           <h3>About</h3>
           <h3>Location</h3>
           <h3>Fiesta Rooms</h3>
-          <button className="reservation">< Reservation /> </button>
+          < Reservation onClick={this.handleOpen}/>
         </div>
         </div> 
           <div className='box'>
