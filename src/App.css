@@ -89,8 +89,8 @@ h3,
 }
 
 .image {
-  width: 2000px;
-  height: 1100px;
+  width: 1960px;
+  height: 1050px;
   border-radius: 5px;
   margin-bottom: 120px;
 }
@@ -123,3 +123,32 @@ h3,
   margin: 0 auto;
   
 }
+
+.make-reservation {
+  font-family:  "Allura", cursive;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.reserved {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.submit-form input {
+  width: 150px;
+  height: 30px;
+  background-color: black;
+  color:white;
+  font-family:  "Allura", cursive;
+  margin-left:30%;
+
+}
+
+.time, .quantity {
+  width: 100px;
+  height: 20px;
+
+}
+

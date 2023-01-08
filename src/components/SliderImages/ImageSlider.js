@@ -44,9 +44,9 @@ const ImageSlider = ({ slides }) => {
 
       {SliderData.map((slide, index) => {
         return (
-          <div>
+          <div key={slide.id}>
             {index === current && (
-              <img
+              <img 
                 src={slide.image}
                 alt="restaurant-photos"
                 className="image"
