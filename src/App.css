@@ -13,20 +13,20 @@
   z-index: 10;
   background-color: rgb(55, 55, 55);
 }
-.wrapper{
+.wrapper {
   display: flex;
   margin: 10px;
   margin-top: 0;
 }
 .card {
-  display: flex; 
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: 20px;
   width: 80%;
   align-items: center;
   margin-left: 10%;
-  }
+}
 
 h1 {
   margin-left: 90px;
@@ -93,12 +93,12 @@ h3,
   align-items: center;
 }
 
-/* .image {
-  width: 1960px;
-  height: 1050px;
+.image {
+  width: 100vh;
+  /* height: 1050px; */
   border-radius: 5px;
   margin-bottom: 120px;
-} */
+}
 
 .right-arrow {
   position: absolute;
@@ -129,7 +129,7 @@ h3,
 }
 
 .make-reservation {
-  font-family:  "Allura", cursive;
+  font-family: "Allura", cursive;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -144,15 +144,13 @@ h3,
   width: 150px;
   height: 30px;
   background-color: black;
-  color:white;
-  font-family:  "Allura", cursive;
-  margin-left:30%;
-
+  color: white;
+  font-family: "Allura", cursive;
+  margin-left: 30%;
 }
 
-.time, .quantity {
+.time,
+.quantity {
   width: 100px;
   height: 20px;
-
 }
-

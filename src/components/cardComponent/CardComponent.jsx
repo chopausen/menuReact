@@ -7,19 +7,15 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import TextRating from "./TextRating";
 
-
-
 class CardComponent extends React.Component {
   constructor(props) {
     super();
-   
   }
   addToCartHandler = () => {
     console.log("Add to cart clicked!");
   };
 
   render() {
- 
     const name = this.props.name;
     const img = this.props.img;
     const price = this.props.price;
@@ -29,8 +25,8 @@ class CardComponent extends React.Component {
 
     return (
       <div>
-        <Card sx={{ maxWidth: 300, margin: 2, maxHeight:430 }}>
-          <CardMedia sx={{ height: 200, width: 300}} image={img} name={name} />
+        <Card sx={{ width: 300, margin: 2, height: 440 }}>
+          <CardMedia sx={{ height: 200, width: 300 }} image={img} name={name} />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
               {name}
