@@ -13,15 +13,20 @@
   z-index: 10;
   background-color: rgb(55, 55, 55);
 }
-.card {
+.wrapper{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 20px;
-  width: 1000px;
-  align-items: center;
-  margin-left: 25%;
+  margin: 10px;
+  margin-top: 0;
 }
+.card {
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+  width: 80%;
+  align-items: center;
+  margin-left: 10%;
+  }
 
 h1 {
   margin-left: 90px;
@@ -88,12 +93,12 @@ h3,
   align-items: center;
 }
 
-.image {
+/* .image {
   width: 1960px;
   height: 1050px;
   border-radius: 5px;
   margin-bottom: 120px;
-}
+} */
 
 .right-arrow {
   position: absolute;
@@ -120,8 +125,7 @@ h3,
 .search-bar {
   text-align: center;
   display: block;
-  margin: 0 auto;
-  
+  margin: 20px auto;
 }
 
 .make-reservation {
