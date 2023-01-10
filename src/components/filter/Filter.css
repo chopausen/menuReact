@@ -25,4 +25,21 @@
 }
 #filter-select:hover {
   color: turquoise;
+
+}
+#filter-price-select {
+  font-family: "Josefin Sans", sans-serif;
+  color: beige;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  background-color: #373737;
+  width: 122px;
+  border-radius: 5px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+#filter-price-select:hover {
+  color: turquoise;
 }
