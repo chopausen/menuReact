@@ -6,6 +6,7 @@ import ImageSlider from "./components/SliderImages/ImageSlider";
 import { SliderData } from "./components/SliderImages/SliderData";
 import Reservation from "./components/reservation/Reservation";
 import Filter from "./components/filter/Filter";
+import FilterPrice from "./components/filter/FilterPrice";
 import SortPrice from "./components/sort/SortPrice";
 import Footer from "./components/footer/Footer";
 
@@ -38,6 +39,32 @@ class App extends React.Component {
     }
   };
 
+  handlePriceRange = (range) => {
+    let filteredMenu = menu;
+    if (range === "all") {
+      this.setState({ menuToFilter: menu });
+    } else if (range === "$0-$50") {
+      filteredMenu = menu.filter((dish) => dish.price <= 50);
+      this.setState({ menuToFilter: filteredMenu });
+    } else if (range === "$50-$100") {
+      filteredMenu = menu.filter((dish) => dish.price > 50 && dish.price <= 100);
+      this.setState({ menuToFilter: filteredMenu });
+    } else if (range === "$100-$150") {
+      filteredMenu = menu.filter((dish) => dish.price > 100 && dish.price <= 150);
+      this.setState({ menuToFilter: filteredMenu })
+    } else if (range === "$150-$200") {
+      filteredMenu = menu.filter((dish) => dish.price > 150 && dish.price <= 200);
+      this.setState({ menuToFilter: filteredMenu })
+    } else if (range === "$200-$250") {
+      filteredMenu = menu.filter((dish) => dish.price > 200 && dish.price <= 250);
+      this.setState({ menuToFilter: filteredMenu })
+    }
+  };
+
+
+
+
+
   render() {
     return (
       <>
@@ -63,8 +90,10 @@ class App extends React.Component {
         {/* FILTER COMPONENT */}
         <div className="wrapper">
           <Filter handleFilter={this.handleFilter} value={this.state.value} />
+
+          <FilterPrice handlePriceRange={this.handlePriceRange} value={this.state.value} />
           {/* Sort component to be added with functionality: */}
-          <SortPrice />
+          <SortPrice  />
         </div>
         <div className="card">
           {this.state.menuToFilter.map((item) => (
