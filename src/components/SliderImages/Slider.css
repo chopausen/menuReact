@@ -1,0 +1,42 @@
+.box {
+  background-color: rgb(55, 55, 55);
+}
+
+.slider {
+  /* position: relative; */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.image {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 5px;
+
+  /* margin-bottom: 120px; */
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  z-index: 9;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
+  z-index: 9;
+  cursor: pointer;
+  user-select: none;
+}
