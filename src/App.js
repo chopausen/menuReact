@@ -59,17 +59,13 @@ class App extends React.Component {
         <br />
         <h1 className="menu-h1">Menu</h1>
         {/* input for menu search has been created below */}
-        <input type="text" className="search-bar" placeholder="Search" />
-
+        <input type="text" className="search-bar" placeholder="Search" />{" "}
         {/* FILTER COMPONENT */}
         <div className="wrapper">
           <Filter handleFilter={this.handleFilter} value={this.state.value} />
           {/* Sort component to be added with functionality: */}
-          <div className="sort-wrapper">
-            <SortPrice />
-          </div>
+          <SortPrice />
         </div>
-
         <div className="card">
           {this.state.menuToFilter.map((item) => (
             <div key={item.id}>
