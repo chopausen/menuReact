@@ -1,24 +1,28 @@
-.mainFilter {
-  font-size: 20px;
-  font-style: italic;
-  margin-top: 30px;
-  margin-left: 30px;
-  font-size: large;
-  border-radius: 5px;
-  color: violet;
+.mainFilter{
+  align-items: center;
+  text-align: center;
+  margin-right: 100px;
+  margin-left: 20px;
+  font-family: "Josefin Sans", sans-serif;
 }
-.filter-select {
-  color: green;
+#sort {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-style: italic;
+  color: #373737;
+}
+#filter-select {
+  font-family: "Josefin Sans", sans-serif;
+  color: beige;
   text-align: center;
   font-size: large;
   font-weight: bold;
-  background-color: yellow;
-  width: 150px;
+  background-color: #373737;
+  width: 120px;
   border-radius: 5px;
+  padding: 7px;
+  cursor: pointer;
 }
-
-.wrapper {
-  display: flex;
-  margin: 10px;
-  margin-top: 0;
+#filter-select:hover{
+  color: turquoise;
 }

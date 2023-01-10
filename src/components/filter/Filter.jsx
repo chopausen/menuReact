@@ -13,8 +13,8 @@ render(){
   
   return(
     <div className='mainFilter'>
-      <h4>Choose Your Category:</h4>
-      <select className='filter-select' value={this.props.value} onChange={(e)=>this.props.handleFilter(e.target.value)}>
+      <h4 id="sort">Choose Your Category:</h4>
+      <select id='filter-select' value={this.props.value} onChange={(e)=>this.props.handleFilter(e.target.value)}>
         {categories.map((category, index)=><option key={index} value={category}>{category}</option>)}
       </select>
     </div>
