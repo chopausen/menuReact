@@ -9,6 +9,7 @@ import Filter from "./components/filter/Filter";
 import FilterPrice from "./components/filter/FilterPrice";
 import Footer from "./components/footer/Footer";
 import Search from "./components/search/Search";
+import Cart from "./components/addToCart/Cart";
 
 class App extends React.Component {
   constructor(props) {
@@ -91,7 +92,9 @@ class App extends React.Component {
             value={this.state.value}
           />
           <Search />
+          <Cart />
         </div>
+
         {/* Card component: */}
         <div className="card">
           {this.state.menuToFilter.map((item) => (

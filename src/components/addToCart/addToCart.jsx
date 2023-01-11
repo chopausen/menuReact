@@ -4,14 +4,23 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./addToCart.css";
 
 class AddToCart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   addToCartHandler = () => {
-    console.log("Add to cart clicked!");
+    // console.log("clicked add");
+    let count = 0;
+    count = count + this.props.price;
+    console.log(count);
   };
+
   render() {
     return (
       <div>
         <IconButton
-          color="primary"
+          color="success"
           aria-label="add to shopping cart"
           onClick={this.addToCartHandler}
         >
