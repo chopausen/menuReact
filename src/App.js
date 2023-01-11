@@ -7,8 +7,8 @@ import { SliderData } from "./components/SliderImages/SliderData";
 import Reservation from "./components/reservation/Reservation";
 import Filter from "./components/filter/Filter";
 import FilterPrice from "./components/filter/FilterPrice";
-import SortPrice from "./components/sort/SortPrice";
 import Footer from "./components/footer/Footer";
+import Search from "./components/search/Search";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,14 +18,9 @@ class App extends React.Component {
       value: "all",
       showComponent: false,
       handleOpen: false,
+      menu,
     };
   }
-
-  //   orderHandler =(()=> {
-  // this.setState({
-  //   showComponent: true,
-  // })
-  //   })
 
   handleFilter = (category) => {
     this.setState({ ...this.state, value: category });
@@ -47,23 +42,27 @@ class App extends React.Component {
       filteredMenu = menu.filter((dish) => dish.price <= 50);
       this.setState({ menuToFilter: filteredMenu });
     } else if (range === "$50-$100") {
-      filteredMenu = menu.filter((dish) => dish.price > 50 && dish.price <= 100);
+      filteredMenu = menu.filter(
+        (dish) => dish.price > 50 && dish.price <= 100
+      );
       this.setState({ menuToFilter: filteredMenu });
     } else if (range === "$100-$150") {
-      filteredMenu = menu.filter((dish) => dish.price > 100 && dish.price <= 150);
-      this.setState({ menuToFilter: filteredMenu })
+      filteredMenu = menu.filter(
+        (dish) => dish.price > 100 && dish.price <= 150
+      );
+      this.setState({ menuToFilter: filteredMenu });
     } else if (range === "$150-$200") {
-      filteredMenu = menu.filter((dish) => dish.price > 150 && dish.price <= 200);
-      this.setState({ menuToFilter: filteredMenu })
+      filteredMenu = menu.filter(
+        (dish) => dish.price > 150 && dish.price <= 200
+      );
+      this.setState({ menuToFilter: filteredMenu });
     } else if (range === "$200-$250") {
-      filteredMenu = menu.filter((dish) => dish.price > 200 && dish.price <= 250);
-      this.setState({ menuToFilter: filteredMenu })
+      filteredMenu = menu.filter(
+        (dish) => dish.price > 200 && dish.price <= 250
+      );
+      this.setState({ menuToFilter: filteredMenu });
     }
   };
-
-
-
-
 
   render() {
     return (
@@ -83,18 +82,17 @@ class App extends React.Component {
             <button className="order">Order Now</button>
           </div>
         </div>
-        <br />
-        <h1 className="menu-h1">Menu</h1>
-        {/* input for menu search has been created below */}
-        <input type="text" className="search-bar" placeholder="Search" />{" "}
+        {/* <h1 className="menu-h1">Menu</h1> */}
         {/* FILTER COMPONENT */}
         <div className="wrapper">
           <Filter handleFilter={this.handleFilter} value={this.state.value} />
-
-          <FilterPrice handlePriceRange={this.handlePriceRange} value={this.state.value} />
-          {/* Sort component to be added with functionality: */}
-          <SortPrice  />
+          <FilterPrice
+            handlePriceRange={this.handlePriceRange}
+            value={this.state.value}
+          />
+          <Search />
         </div>
+        {/* Card component: */}
         <div className="card">
           {this.state.menuToFilter.map((item) => (
             <div key={item.id}>

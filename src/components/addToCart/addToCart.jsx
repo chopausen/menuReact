@@ -11,11 +11,11 @@ class AddToCart extends React.Component {
     return (
       <div>
         <IconButton
-          color="success"
+          color="primary"
           aria-label="add to shopping cart"
           onClick={this.addToCartHandler}
         >
-          <AddShoppingCartIcon />
+          <AddShoppingCartIcon /> Add
         </IconButton>
       </div>
     );
