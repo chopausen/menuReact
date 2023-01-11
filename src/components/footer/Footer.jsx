@@ -7,11 +7,10 @@ export default class Footer extends React.Component {
       <footer className="footer">
         <div className="our-schedule">
           <h3> Our schedule: </h3>
-          <p>Mon: 9.00 am - 10.00pm </p>
-          <p>Tue: 9.00 am - 10.00pm</p>
-          <p>Wed: 9.00 am - 10.00pm</p>
-          <p>Thur: 9.00 am - 10.00pm</p>
-          <p>Fri: 11.00 am - 11.00pm</p>
+          <br />
+          <p>Tue - Thurs: 9.00 am - 10.00 pm</p>
+          <p>Fri - Sun : 11.00 am - 11.00 pm</p>
+          <p>Mon: We are closed! </p>
         </div>
         <div className="location-map">
           <img

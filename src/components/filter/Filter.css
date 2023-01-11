@@ -15,9 +15,7 @@
 }
 
 #sort {
-  /* margin-bottom: 10px; */
   font-size: 18px;
-  /* font-style: italic; */
   color: #373737;
 }
 #filter-select,
@@ -37,19 +35,3 @@
 #filter-price-select:hover {
   color: lightgreen;
 }
-/* #filter-price-select{
-  font-family: "Josefin Sans", sans-serif;
-  color: beige;
-  text-align: center;
-  font-size: large;
-  font-weight: bold;
-  background-color: #373737;
-  width: 122px;
-  border-radius: 5px;
-  padding: 7px;
-  cursor: pointer;
-} */
-
-/* #filter-price-select:hover {
-  color: turquoise;
-} */

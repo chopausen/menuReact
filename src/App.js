@@ -71,7 +71,7 @@ class App extends React.Component {
           <h1>Fiesta</h1>
           <div className="navigation">
             <h3>About</h3>
-            <h3>Location</h3>
+            <h3>Contact us</h3>
             <h3>Fiesta Rooms</h3>
             <Reservation onClick={this.handleOpen} />
           </div>
