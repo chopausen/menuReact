@@ -1,0 +1,12 @@
+.footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(55, 55, 55);
+}
+.contacts,
+.our-schedule {
+  height: 150px;
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+}
