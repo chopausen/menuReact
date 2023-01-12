@@ -13,59 +13,66 @@ import Cart from "./components/addToCart/Cart";
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       menuToFilter: menu,
-      value: "all",
+      valueMain: 'all',
       showComponent: false,
       handleOpen: false,
       menu,
-    };
+      searchTerm: '',
+    }
   }
 
   handleFilter = (category) => {
-    this.setState({ ...this.state, value: category });
-    if (category === "all") {
-      this.setState({ menuToFilter: menu });
+    this.setState({ ...this.state, valueMain: category })
+    if (category === 'all') {
+      this.setState({ menuToFilter: menu })
     } else {
       const newMenu = menu.filter((meal) => {
-        return meal.category.toLowerCase() === category.toLowerCase();
-      });
-      this.setState({ menuToFilter: newMenu });
+        return meal.category.toLowerCase() === category.toLowerCase()
+      })
+      this.setState({ menuToFilter: newMenu })
     }
-  };
+  }
 
   handlePriceRange = (range) => {
-    let filteredMenu = menu;
-    if (range === "all") {
-      this.setState({ menuToFilter: menu });
-    } else if (range === "$0-$50") {
-      filteredMenu = menu.filter((dish) => dish.price <= 50);
-      this.setState({ menuToFilter: filteredMenu });
-    } else if (range === "$50-$100") {
-      filteredMenu = menu.filter(
-        (dish) => dish.price > 50 && dish.price <= 100
-      );
-      this.setState({ menuToFilter: filteredMenu });
-    } else if (range === "$100-$150") {
+    let filteredMenu = menu
+    if (range === 'all') {
+      this.setState({ menuToFilter: menu })
+    } else if (range === '$0-$50') {
+      filteredMenu = menu.filter((dish) => dish.price <= 50)
+      this.setState({ menuToFilter: filteredMenu })
+    } else if (range === '$50-$100') {
+      filteredMenu = menu.filter((dish) => dish.price > 50 && dish.price <= 100)
+      this.setState({ menuToFilter: filteredMenu })
+    } else if (range === '$100-$150') {
       filteredMenu = menu.filter(
         (dish) => dish.price > 100 && dish.price <= 150
-      );
-      this.setState({ menuToFilter: filteredMenu });
-    } else if (range === "$150-$200") {
+      )
+      this.setState({ menuToFilter: filteredMenu })
+    } else if (range === '$150-$200') {
       filteredMenu = menu.filter(
         (dish) => dish.price > 150 && dish.price <= 200
-      );
-      this.setState({ menuToFilter: filteredMenu });
-    } else if (range === "$200-$250") {
+      )
+      this.setState({ menuToFilter: filteredMenu })
+    } else if (range === '$200-$250') {
       filteredMenu = menu.filter(
         (dish) => dish.price > 200 && dish.price <= 250
-      );
-      this.setState({ menuToFilter: filteredMenu });
+      )
+      this.setState({ menuToFilter: filteredMenu })
     }
-  };
+  }
 
+  onSearchSubmit = (e) => {
+    e.preventDefault()
+    console.log(e.target[0].value)
+    
+    this.setState({ searchTerm: e.target[0].value })
+    console.log(this.searchTerm)
+  }
   render() {
+    let menuItems = this.state.menuToFilter;
     return (
       <>
         <div className="header">
@@ -91,13 +98,20 @@ class App extends React.Component {
             handlePriceRange={this.handlePriceRange}
             value={this.state.value}
           />
+          <form className="search-input" onSubmit={this.onSearchSubmit}>
+            <input
+              type="text"
+              className="search-bar"
+              placeholder="Search your favorites:"
+            />
+          </form>
           <Search />
           <Cart />
         </div>
 
         {/* Card component: */}
         <div className="card">
-          {this.state.menuToFilter.map((item) => (
+          {menuItems.map((item) => (
             <div key={item.id}>
               <CardComponent
                 name={item.name}
@@ -112,8 +126,8 @@ class App extends React.Component {
         </div>
         <Footer />
       </>
-    );
+    )
   }
 }
 
-export default App;
+export default App
