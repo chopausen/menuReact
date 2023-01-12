@@ -125,3 +125,11 @@ h3,
   width: 100px;
   height: 20px;
 }
+.noMatchesInSearch{
+  text-align: center;
+  align-items: center;
+  margin-left: 50px;
+  color: #373737;
+  font-size: large;
+  font-weight: bold;
+}

@@ -6,13 +6,15 @@ import "./addToCart.css";
 class AddToCart extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      total:0
+    };
   }
 
   addToCartHandler = () => {
-    let count = 0;
-    count = count + this.props.price;
-    console.log(count);
+    let count = this.state.total;
+    count = (count + this.props.price);
+    this.setState({total:count})
   };
 
   render() {
@@ -25,6 +27,7 @@ class AddToCart extends React.Component {
         >
           <AddShoppingCartIcon /> Add
         </IconButton>
+        <p>Total:{(this.state.total).toFixed(0)}</p>
       </div>
     );
   }
