@@ -1,6 +1,7 @@
 import React from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import "./addToCart.css";
+import './addToCart'
 
 class Cart extends React.Component {
   constructor(props) {

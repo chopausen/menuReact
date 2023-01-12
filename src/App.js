@@ -24,6 +24,8 @@ class App extends React.Component {
     };
   }
 
+  // ↓↓↓ Sorting by Category ↓↓↓ //
+
   handleFilter = (category) => {
     this.setState({ ...this.state, valueMain: category });
     if (category === "all") {
@@ -36,6 +38,7 @@ class App extends React.Component {
     }
   };
 
+  // ↓↓↓ Sorting by Price ↓↓↓ //
   handlePriceRange = (range) => {
     let filteredMenu = menu;
     if (range === "all") {
@@ -66,23 +69,26 @@ class App extends React.Component {
     }
   };
 
-  // ↓↓↓ Search Functionality ↓↓↓
-
+  // ↓↓↓ Search Functionality ↓↓↓ //
   handleChange = (e) => {
     this.setState({ query: e.target.value });
   };
 
-  onSearchSubmit = (e) => {
+  onKeyUp = (e) => {
     e.preventDefault();
     let results = menu.filter(
       (item) =>
         item.name.toLowerCase().includes(this.state.query.toLowerCase()) ||
         item.dsc.toLowerCase().includes(this.state.query.toLowerCase())
     );
-    this.setState({ menuToFilter: results });
+    if(results.length === 0){
+      this.setState({error: "NO matching food found."});
+    } else{
+    this.setState({ menuToFilter: results, error: ''});
+  }
   };
-  // ↑↑↑ Search Functionality ↑↑↑
 
+  // ↓↓↓ Rendering Part ↓↓↓ //
   render() {
     let menuItems = this.state.menuToFilter;
     return (
@@ -95,7 +101,8 @@ class App extends React.Component {
             <button className="order">Order Now</button>
           </div>
         </div>
-        {/* <h1 className="menu-h1">Menu</h1> */}
+        
+        
         {/* FILTER COMPONENT */}
         <div className="wrapper">
           <Filter handleFilter={this.handleFilter} value={this.state.value} />
@@ -104,14 +111,19 @@ class App extends React.Component {
             value={this.state.value}
           />
 
-          {/* SEARCH COMPONENT */}
 
+          {/* SEARCH COMPONENT */}
           <Search
             handleChange={this.handleChange}
-            onSearchSubmit={this.onSearchSubmit}
+            onKeyUp={this.onKeyUp}
           />
+
+          {/* Cart component which is calculate total sum */}
           <Cart />
         </div>
+
+        {/* Error message if food not found */}
+        <div className="noMatchesInSearch">{this.state.error&& <p>{this.state.error}</p>}
 
         {/* Card component: */}
         <div className="card">
@@ -128,7 +140,10 @@ class App extends React.Component {
             </div>
           ))}
         </div>
+
+        {/* Footer part */}
         <Footer />
+        </div>
       </>
     );
   }
