@@ -4,7 +4,6 @@ import "./Slider.css";
 
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
-  // const [shuffle, setShuffle] = useState([]);
   const length = slides.length;
 
   const nextSlide = () => {
@@ -15,19 +14,6 @@ const ImageSlider = ({ slides }) => {
     setCurrent(current === 0 ? length - 1 : current - 1);
   };
 
-  // useEffect(() => {
-  //   const lastIndex = slides.length - 1;
-  //   if (current < 0) {
-  //     setCurrent(lastIndex);
-  //   }
-  //   if (current > lastIndex) {
-  //     setCurrent(0);
-  //   }
-  //   let sliders = setInterval(() => {
-  //     setCurrent(current + 1);
-  //   }, 5000);
-  //   return () => clearInterval(sliders);
-  // }, [current, slides.length]);
 
   if (!Array.isArray(slides) || slides.length <= 0) {
     return null;
