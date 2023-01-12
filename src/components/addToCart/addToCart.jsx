@@ -10,7 +10,6 @@ class AddToCart extends React.Component {
   }
 
   addToCartHandler = () => {
-    // console.log("clicked add");
     let count = 0;
     count = count + this.props.price;
     console.log(count);
