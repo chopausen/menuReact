@@ -4,12 +4,12 @@ import CardComponent from "./components/cardComponent/CardComponent";
 import { menu } from "./data";
 import ImageSlider from "./components/SliderImages/ImageSlider";
 import { SliderData } from "./components/SliderImages/SliderData";
-import Reservation from "./components/reservation/Reservation";
 import Filter from "./components/filter/Filter";
 import FilterPrice from "./components/filter/FilterPrice";
 import Footer from "./components/footer/Footer";
 import Cart from "./components/addToCart/Cart";
 import Search from "./components/search/Search";
+import Navbar from "./components/Navbar/Navbar";
 
 class App extends React.Component {
   constructor(props) {
@@ -87,15 +87,8 @@ class App extends React.Component {
     let menuItems = this.state.menuToFilter;
     return (
       <>
-        <div className="header">
-          <h1>Fiesta</h1>
-          <div className="navigation">
-            <h3>About</h3>
-            <h3>Contact us</h3>
-            <h3>Fiesta Rooms</h3>
-            <Reservation onClick={this.handleOpen} />
-          </div>
-        </div>
+        <Navbar />
+
         <div className="box">
           <ImageSlider slides={SliderData} />
           <div className="background">
