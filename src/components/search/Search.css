@@ -1,3 +1,37 @@
-.search-div {
-  width: 30%;
+.search-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: auto;
+  padding-top: 20px;
 }
+
+.search-bar {
+  font-family: "Josefin Sans", sans-serif;
+  color: beige;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  background-color: #373737;
+  width: 180px;
+  border-radius: 5px;
+  padding: 7px;
+}
+.button {
+  font-family: "Josefin Sans", sans-serif;
+  color: beige;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  background-color: #373737;
+  border-radius: 5px;
+  padding: 9px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.search-bar:hover, .button:hover {
+  color: lightgreen;
+}
+
