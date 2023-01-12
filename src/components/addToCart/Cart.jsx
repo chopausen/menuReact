@@ -10,7 +10,7 @@ class Cart extends React.Component {
     return (
       <nav>
         <div className="nax-box">
-          <span className="my-shop">My Cart</span>
+          <span className="my-shop">Cart</span>
           <div className="cart">
             <span>
               <ShoppingCartIcon size="large" />
