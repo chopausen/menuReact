@@ -8,8 +8,8 @@ import Reservation from "./components/reservation/Reservation";
 import Filter from "./components/filter/Filter";
 import FilterPrice from "./components/filter/FilterPrice";
 import Footer from "./components/footer/Footer";
-import Search from "./components/search/Search";
 import Cart from "./components/addToCart/Cart";
+import Search from "./components/search/Search";
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class App extends React.Component {
       showComponent: false,
       handleOpen: false,
       menu,
-      searchTerm: '',
+      query: '',
     }
   }
 
@@ -64,13 +64,22 @@ class App extends React.Component {
     }
   }
 
+// ↓↓↓ Search Functionality ↓↓↓
+
+  handleChange = e => {
+    this.setState({ query: e.target.value });
+    }
+
   onSearchSubmit = (e) => {
-    e.preventDefault()
-    console.log(e.target[0].value)
-    
-    this.setState({ searchTerm: e.target[0].value })
-    console.log(this.searchTerm)
+    e.preventDefault();
+    let results = menu.filter(item =>
+      item.name.toLowerCase().includes(this.state.query.toLowerCase()) ||
+      item.dsc.toLowerCase().includes(this.state.query.toLowerCase())
+    );
+    this.setState({ menuToFilter: results })
   }
+// ↑↑↑ Search Functionality ↑↑↑
+  
   render() {
     let menuItems = this.state.menuToFilter;
     return (
@@ -96,16 +105,13 @@ class App extends React.Component {
           <Filter handleFilter={this.handleFilter} value={this.state.value} />
           <FilterPrice
             handlePriceRange={this.handlePriceRange}
-            value={this.state.value}
-          />
-          <form className="search-input" onSubmit={this.onSearchSubmit}>
-            <input
-              type="text"
-              className="search-bar"
-              placeholder="Search your favorites:"
-            />
-          </form>
-          <Search />
+            value={this.state.value}/>
+
+          {/* SEARCH COMPONENT */}
+
+          <Search 
+            handleChange={this.handleChange} 
+            onSearchSubmit={this.onSearchSubmit} />
           <Cart />
         </div>
 
