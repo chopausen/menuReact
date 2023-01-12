@@ -1,14 +1,15 @@
-import './App.css'
-import React from 'react'
-import CardComponent from './components/cardComponent/CardComponent'
-import { menu } from './data'
-import ImageSlider from './components/SliderImages/ImageSlider'
-import { SliderData } from './components/SliderImages/SliderData'
-import Reservation from './components/reservation/Reservation'
-import Filter from './components/filter/Filter'
-import FilterPrice from './components/filter/FilterPrice'
-import Footer from './components/footer/Footer'
-import Search from './components/search/Search'
+import "./App.css";
+import React from "react";
+import CardComponent from "./components/cardComponent/CardComponent";
+import { menu } from "./data";
+import ImageSlider from "./components/SliderImages/ImageSlider";
+import { SliderData } from "./components/SliderImages/SliderData";
+import Reservation from "./components/reservation/Reservation";
+import Filter from "./components/filter/Filter";
+import FilterPrice from "./components/filter/FilterPrice";
+import Footer from "./components/footer/Footer";
+import Search from "./components/search/Search";
+import Cart from "./components/addToCart/Cart";
 
 class App extends React.Component {
   constructor(props) {
@@ -105,7 +106,9 @@ class App extends React.Component {
             />
           </form>
           <Search />
+          <Cart />
         </div>
+
         {/* Card component: */}
         <div className="card">
           {menuItems.map((item) => (
